@@ -1,3 +1,5 @@
+# Purpose: Calculating the area under the parabola using the Monte Carlo Technique
+
 import numpy.random as npr
 from time import ctime
 
@@ -9,7 +11,7 @@ Date: %s
 End of processing.""" % ctime())
 
 
-def getPositive(prompt):
+def getPositive(prompt): # Function to get a positive number only
     state = True
     while state:
         number = input(prompt).strip()
@@ -30,7 +32,7 @@ def getPositive(prompt):
             print('Missing input!')
 
 
-def parabola(h, k, xCoordinates):
+def parabola(h, k, xCoordinates): # Function to get the points on the parabola according to xCoordinates 
     a = -k / (h * h)
     yCoordinates = a * pow((xCoordinates - h), 2) + k
     return yCoordinates
@@ -45,7 +47,7 @@ def monteCarlo(fx, h, k, points):
     return estimArea
 
 
-def main():
+def main(): # The main function to call other functions into and perform or operations
     points = getPositive('Enter the number of intervals / points: ')
     h = getPositive('Enter the value of h in cm: ')
     k = getPositive('Enter the value of k in cm: ')
